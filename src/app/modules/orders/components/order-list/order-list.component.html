@@ -1,0 +1,44 @@
+<div class="orders bg-white px-3 py-4 h-100" [class.show]="isCartOpen">
+  <button type="button" class="orders-close-btn d-flex align-items-center justify-content-center" (click)="closeCart()">
+    <i class="bi bi-x"></i>
+  </button>
+  <div class="orders-head">
+    <h4 class="orders-title text-dark mb-0">Your Cart</h4>
+    <span class="orders-count">{{ orderItems.length > 0 ? orderItems.length : 0 }} Items</span>
+  </div>
+
+  <div class="orders-list-wrapper" [class.d-none]="orderItems.length == 0">
+    <div class="orders-list my-4" *ngIf="orderItems">
+      <app-order-item [orderItem]="item" *ngFor="let item of orderItems"></app-order-item>
+    </div>
+
+    <a href="#" class="btn orders-place-btn text-white text-center py-2 w-100">
+      <span class="me-3">Place Order</span>
+      <span>{{ totalPrice | currency: "USD" }}</span>
+    </a>
+    <p class="orders-notice p-2 mt-4">Safety Assured meals and contactless delivery</p>
+
+    <div class="meal-others p-2">
+      <h5 class="meal-others-title mb-4">You May Also Like</h5>
+      <div class="orders-item my-2">
+        <div class="orders-item-img">
+          <img src="../../../../../assets/temp-food.jpeg" alt="" class="img-fluid" />
+        </div>
+        <div class="orders-item-info">
+          <p class="orders-item-info-title">Dutch fried meal</p>
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="orders-item-info-price">{{ 10 | currency: "USD" }}</span>
+            <button type="button" class="orders-item-info-btn">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders-empty text-center" [class.d-none]=" orderItems.length > 0">
+    <img src = "../../../../../assets/plate.svg" />
+    <h4 class="empty-title mt-4">Your cart is empty.</h4>
+    <p class="empty-text">Add some delicious food available on our menu to checkout.</p>
+    <a href="#" class="gradient-orange-btn">Browse Food</a>
+  </div>
+</div>

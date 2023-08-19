@@ -1,0 +1,26 @@
+<section  class="menu-list-holder my-4">
+  <div class="menu-list-head d-flex align-items-center justify-content-between">
+    <div class="menu-cat-title">
+      <p class="text-uppercase">categories</p>
+    </div>
+    <div class="menu-cat-filter">
+    </div>
+  </div>
+  <div class="menu-list-content">
+    <div class="menu-cat my-3 pe-3">
+      <ul class="menu-cat-list m-0 p-0" *ngIf="categoriesData">
+        <!-- cat-item-active -->
+        <li class="cat-item my-3" [ngClass]="{ 'cat-item-active' : activeCategory == category.name ? true : false}" *ngFor="let category of categoriesData">
+          <button type="button" (click)="onCategorySelection(category.name)" class="cat-item-link text-decoration-none text-dark">{{ replaceAndCapitalizeString(category.name) }}</button>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-list my-3" *ngIf="foodMenuData">
+      <app-title [titleData]="bestFoodTitle"></app-title>
+      <div class="row p-3 gy-3 gx-2">
+        <app-loader [isLoading]="isLoading"></app-loader>
+        <app-menu-item class="col-md-6 col-lg-4" [menuItem]="item" *ngFor="let item of foodMenuData"></app-menu-item>
+      </div>
+    </div>
+  </div>
+</section >

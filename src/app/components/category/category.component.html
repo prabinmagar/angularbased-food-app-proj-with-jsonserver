@@ -1,0 +1,19 @@
+<div class="categories py-4">
+  <div class="container">
+    <div class="categories-content" *ngIf="categoriesData.length > 0">
+      <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of categoriesData" class="slide categories-item d-grid align-items-center justify-content-center">
+          <div class="item-icon d-flex align-items-center justify-content-center">
+            <img src="{{ slide.iconImg }}" />
+          </div>
+          <span class="item-text">{{ slide.name | replaceAndCapitalizeString }}</span>
+        </div>
+      </ngx-slick-carousel>
+      <div class="categories-list d-flex align-items-center justify-content-center">
+        <div class="categories-item d-grid align-items-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

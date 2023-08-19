@@ -1,0 +1,80 @@
+@import "../../../../../styles.scss";
+
+.menu-item{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+  border-radius: 10px;
+  transition: $default-transition;
+
+  &:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  }
+
+  .item-category{
+    span{
+      font-size: 12px;
+      opacity: 0.8;
+    }
+  }
+
+  .item-img{
+    border-radius: 10px;
+    overflow: hidden;
+    height: 180px;
+    display: block;
+
+    img{
+      transition: $default-transition;
+    }
+
+    &:hover{
+      img{
+        scale: 1.1;
+      }
+    }
+  }
+
+  .item-info{
+    &-title{
+      font-size: 16px;
+      opacity: 0.9;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    &-price{
+      font-weight: 600;
+      opacity: 0.9;
+    }
+  }
+
+  .item-add-btn{
+    background-image: linear-gradient(to right,#f5914e,#e85826);
+    border-radius: 100vh;
+    width: 90px;
+    height: 30px;
+    font-size: 15px;
+    transition: $default-transition;
+
+    &:hover{
+      transform: scale(0.95);
+    }
+  }
+
+  .item-controls{
+    background-image: linear-gradient(to right,#f5914e,#e85826);
+    border-radius: 100vh;
+    height: 30px;
+    grid-template-columns: repeat(3, 30px);
+
+    .item-control-val{
+      background-image: linear-gradient(to left,#f5914e,#e85826);
+      border-radius: 50%;
+    }
+
+    .item-control-inc, .item-control-dec{
+      &:hover{
+        opacity: 0.9;
+      }
+    }
+  }
+}

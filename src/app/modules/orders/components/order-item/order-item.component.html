@@ -1,0 +1,20 @@
+<div class="orders-item align-items-start my-2">
+  <div class="orders-item-info align-items-start">
+    <div class="icon-box d-flex align-items-center justify-content-center mt-1">
+      <div class="icon-dot"></div>
+    </div>
+    <div>
+      <p class="orders-item-title">{{ orderItem?.name }}</p>
+      <p class="orders-item-price">{{ orderItem?.quantity * orderItem?.price | currency }}</p>
+    </div>
+  </div>
+  <div class="orders-item-controls">
+    <button class="orders-dec d-flex align-items-center justify-content-center" (click)="onQtyDecrease(orderItem?.id)">
+      <i class="bi bi-dash"></i>
+    </button>
+    <span class="orders-val d-flex align-items-center justify-content-center">{{ orderItem?.quantity }}</span>
+    <button class="orders-inc d-flex align-items-center justify-content-center"  (click)="onQtyIncrease(orderItem?.id)">
+      <i class="bi bi-plus"></i>
+    </button>
+  </div>
+</div>

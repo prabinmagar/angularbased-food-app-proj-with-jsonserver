@@ -1,0 +1,41 @@
+.orders-item{
+  display: grid;
+  grid-template-columns: auto 74px;
+  column-gap: 6px;
+  padding-right: 8px;
+
+  &-info{
+    display: grid;
+    grid-template-columns: 24px auto;
+  }
+
+  &-title{
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  &-price{
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &-controls{
+    display: grid;
+    grid-template-columns: repeat(3, 24px);
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50vh;
+
+    *[class^='orders']{
+      height: 24px;
+      i::before{
+        vertical-align: middle;
+      }
+    }
+
+    .orders-val{
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}

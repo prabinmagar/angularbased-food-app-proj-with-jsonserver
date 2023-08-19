@@ -1,0 +1,76 @@
+@import "../../../styles.scss";
+
+.footer{
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  &-item-title{
+    font-size: 16px;
+    color: #5c6366;
+    font-weight: 500;
+    margin-bottom: 18px;
+  }
+
+  .footer-links{
+    li{
+      a{
+        color: #5f6062;
+        text-decoration: none;
+        font-size: 14px;
+        &:hover{
+          color: $color-orange;
+        }
+      }
+    }
+  }
+
+  .subscribe-form{
+    height: 48px;
+    .form-control{
+      border-radius: 0;
+      background-color: #f5f7f7;
+      font-size: 15px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      transition: all 300ms ease-in-out;
+
+      &:focus{
+        border: 1px solid $color-orange!important;
+      }
+
+      &::placeholder{
+        color: #5f6062!important;
+      }
+    }
+
+    .input-group-text{
+      border-radius: 0;
+      background-image: linear-gradient(to right, #f5914e, #e85826);
+      border-radius: 6px;
+    }
+  }
+
+  .store-btns{
+    column-gap: 6px;
+    a{
+      width: 120px;
+      &:last-child{
+        width: 115px;
+      }
+    }
+  }
+}
+
+.footer-bottom{
+  background-color: $color-valentino;
+  p{
+    font-size: 14px;
+  }
+  ul li a{
+    color: #909090;
+    font-size: 13px;
+
+    &:hover{
+      color: $color-white;
+    }
+  }
+}

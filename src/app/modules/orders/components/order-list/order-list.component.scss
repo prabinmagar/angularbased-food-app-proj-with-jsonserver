@@ -1,0 +1,122 @@
+@import "../../../../../styles.scss";
+
+.orders{
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 280px;
+  z-index: 9999;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transform: translateX(100%);
+  transition: $default-transition;
+
+  &.show{
+    transform: translateX(0);
+  }
+
+  &-title{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &-count{
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  &-close-btn{
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+
+    &:hover{
+      color: $color-silver;
+    }
+  }
+
+  &-place-btn{
+    background-image: linear-gradient(to right,#f5914e,#e85826);
+    border-radius: 100vh;
+
+    &:hover{
+      background-image: linear-gradient(to right,#e85826,  #f5914e);
+    }
+  }
+
+  .orders-notice{
+    background-color: #e2feed;
+    border:1px solid #9febc3;
+    color: #2ebd59;
+    font-size: 13px;
+    font-weight: 300;
+  }
+
+  .meal-others{
+    background-color: #F7F7F7;
+    &-title{
+      font-size: 15px;
+    }
+
+    .orders-item{
+      display: grid;
+      grid-template-columns: 72px auto;
+      column-gap: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+
+      &-info-title{
+        font-size: 13px;
+      }
+
+      &-info-price{
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      &-info-btn{
+        padding: 2px 20px;
+        color: $color-orange;
+        font-size: 14px;
+        border: 1px solid $color-orange;
+        border-radius: 100vh;
+
+        &:hover{
+          background-color: $color-orange;
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  &-list-wrapper{
+    height: 100%;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+  }
+
+  &-empty{
+    .empty-title{
+      font-size: 16px;
+    }
+
+    .empty-text{
+      font-size: 13px;
+    }
+  }
+}

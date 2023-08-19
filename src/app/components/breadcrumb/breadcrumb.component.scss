@@ -1,0 +1,11 @@
+@import "../../../styles.scss";
+
+.breadcrumb{
+  a{
+    color: $color-dark;
+    font-weight: 500;
+  }
+  &-separator{
+    margin-bottom: -2px;
+  }
+}

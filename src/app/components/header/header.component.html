@@ -1,0 +1,32 @@
+<header class="header d-flex flex-column">
+  <nav class="navigation-menu py-3">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="brand-and-toggler d-flex align-items-center">
+        <a href="#" class="navbar-brand">
+          <img src="../../../assets/logo.png" alt="" />
+        </a>
+        <button type="button" class="navbar-toggler d-none">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div class="input-group bg-white">
+        <span class="input-group-text d-flex align-items-center justify-content-between border-0 bg-none">
+          <i class="bi bi-search mb-1"></i>
+        </span>
+        <input type="text" class="form-control border-0" placeholder="Search for your favorite dish ..." />
+      </div>
+
+      <div>
+        <div class="btn-group">
+          <a href="#" class="btn btn-login me-2">Login</a>
+          <a href="#" class="btn btn-login text-white">Sign Up</a>
+        </div>
+        <button class="cart-btn ms-4 position-relative" (click)="onOrderShowClick()">
+          <i class="bi bi-cart"></i>
+          <span class="cart-value d-flex align-items-center justify-content-center">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>

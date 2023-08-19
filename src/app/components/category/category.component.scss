@@ -1,0 +1,27 @@
+.categories{
+  border-bottom: 1px solid rgba(0,0, 0,0.1);
+  &-item{
+    grid-template-columns: 56px auto;
+    column-gap: 12px;
+    .item-icon{
+      width: 56px;
+      height: 56px;
+      background-color: rgba(0,0, 0,0.05);
+      border-radius: 50%;
+
+      img{
+        width: 36px;
+      }
+    }
+
+    .item-text{
+      color: #696969;
+      font-weight: 500;
+    }
+  }
+
+  &-list{
+    column-gap: 24px;
+  }
+}
+

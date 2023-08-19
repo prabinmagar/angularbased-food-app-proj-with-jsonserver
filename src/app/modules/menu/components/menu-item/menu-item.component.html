@@ -1,0 +1,26 @@
+<div class="menu-item p-2" *ngIf="!(menuItem | emptyObject)">
+  <div class="item-category d-flex align-items-center mb-2">
+    <div class="item-category-icon me-2">
+      <div class="icon-box d-flex align-items-center justify-content-center">
+        <div class="icon-dot"></div>
+      </div>
+    </div>
+    <span class="text-uppercase text-dark">{{ menuItem.category }}</span>
+  </div>
+  <a [routerLink]="['/menu-details', menuItem.id]"  class="item-img">
+    <img [src]="menuItem.imageUrl" (error)="handleImageError()" class="img-fluid" />
+  </a>
+  <div class="my-2">
+    <h5 class="item-info-title">{{ menuItem.name }}</h5>
+    <div class="d-flex align-items-center justify-content-between">
+      <p class="item-info-price text-dark mb-0">{{ menuItem.price/10 | currency:"USD" }}</p>
+      <button class="item-add-btn text-uppercase text-white" (click)="addToCart(menuItem)">add</button>
+      <!-- <button class="item-add-btn text-uppercase text-white" (click)="addToCart(menuItem)" [ngClass]="{'d-none': checkItemInCart(menuItem.id)}">add</button>
+      <div class="item-controls d-grid align-items-stretch" [ngClass]="{'d-none': !checkItemInCart(menuItem.id)}">
+        <button type="button" class="item-control-dec d-flex align-items-center justify-content-center text-white" (click)="onQtyDecrease(menuItem.id)">-</button>
+        <span class="item-control-val d-flex align-items-center justify-content-center text-white"></span>
+        <button type="button" class="item-control-inc d-flex align-items-center justify-content-center text-white" (click)="onQtyIncrease(menuItem.id)">+</button>
+      </div> -->
+    </div>
+  </div>
+</div>

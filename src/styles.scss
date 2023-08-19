@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$color-silver: #a8a8a8;
+$color-dark: #4a4a4a;
+$color-red: #ef4f5f;
+$color-white: #fff;
+$color-orange: #df561d;
+$color-green: #2ebd59;
+$color-valentino: #343433;
+$gradient-btn: linear-gradient(to right,#f5914e,#e85826);
+$shadow-input: rgba(28, 28, 28, 0.08) 0px 2px 8;
+$default-transition: all 300ms ease-in-out;
+
+$breakpoints-up: (
+  "xs": "480px",
+  "sm": "576px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1200px",
+  "xxl": "1400px",
+);
+
+$breakpoints-down: (
+  "xs": "479.98px",
+  "sm": "575.98px",
+  "md": "767.98px",
+  "lg": "991.98px",
+  "xl": "1199.98px",
+  "xxl": "1399.98px",
+);
+
+// mixins
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  font-weight: 400;
+  height: 100%;
+  font-family: 'Poppins', sans-serif!important;
+}
+ul,
+ol {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+  transition: $default-transition;
+
+  &:focus,
+  &:hover {
+    color: unset;
+  }
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+img {
+  width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+textarea {
+  resize: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: $default-transition;
+}
+
+// Images, Flash & video
+img,
+object,
+embed,
+video {
+  max-width: 100%;
+}
+
+//* Remove default table spacing.
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input{
+  font-size: 15px;
+  opacity: 0.8;
+
+  &:focus{
+    box-shadow: none!important;
+  }
+}
+
+.text-dark{
+  color: $color-dark;
+}
+.text-silver{
+  color: $color-silver;
+}
+
+.icon-box{
+  border-radius: 2px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid $color-red;
+}
+.icon-dot{
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background-color:$color-red;
+}
+
+.cart-add-btn{
+  background-image: linear-gradient(to right,#f5914e,#e85826);
+  border-radius: 100vh;
+  width: 90px;
+  height: 30px;
+  font-size: 15px;
+  transition: $default-transition;
+
+  &:hover{
+    transform: scale(0.95);
+  }
+}
+
+
+.categories{
+  .slick-slider{
+    .slick-prev{
+      z-index: 10;
+      left: 0;
+      &::before{
+        color: $color-orange;
+      }
+    }
+
+    .slick-next{
+      right: 0;
+      &::before{
+        color: $color-orange;
+      }
+    }
+  }
+}

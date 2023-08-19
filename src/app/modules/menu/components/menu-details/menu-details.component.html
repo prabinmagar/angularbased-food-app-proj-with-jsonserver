@@ -1,0 +1,43 @@
+<main class="my-4">
+  <div class="menu-details row gx-5" *ngIf="menuItemDetails">
+    <div class="menu-details-img col-md-6">
+      <app-loader [isLoading]="isDetailLoading"></app-loader>
+      <img [src]="menuItemDetails.imageUrl" class="img-fluid" />
+      <ul class="social-links d-flex justify-content-start">
+        <li><a href="#" class="d-flex align-items-center justify-content-center text-white"><i class="bi bi-facebook"></i></a></li>
+        <li><a href="#" class="d-flex align-items-center justify-content-center text-white"><i class="bi bi-twitter"></i></a></li>
+        <li><a href="#" class="d-flex align-items-center justify-content-center text-white"><i class="bi bi-instagram"></i></a></li>
+      </ul>
+    </div>
+    <div class="menu-details-text col-md-6 py-3">
+      <h3 class="details-title pb-1">{{ menuItemDetails.name }} </h3>
+      <div class="item-category d-flex align-items-center mb-2">
+        <div class="item-category-icon me-2">
+          <div class="icon-box d-flex align-items-center justify-content-center">
+            <div class="icon-dot"></div>
+          </div>
+        </div>
+        <span class="text-uppercase item-category-name text-dark">{{ menuItemDetails.category }}</span>
+      </div>
+      <p class="details-price">{{ menuItemDetails.price | currency }}</p>
+      <button class="cart-add-btn text-uppercase text-white" (click)="addToCart(menuItemDetails)">add</button>
+
+      <div class="my-4">
+        <h5 class="text-uppercase details-desc-title pt-2">details about the meal</h5>
+        <p class="details-desc-text">{{ menuItemDetails.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="related-menu mt-5">
+    <div class="menu-list my-3" *ngIf="relatedMenuData">
+      <div class="title text-center d-flex align-items-center justify-content-center">
+        <h3>YOU MIGHT ALSO LIKE</h3>
+      </div>
+      <div class="row p-3 gy-3 gx-2">
+        <app-loader [isLoading]="isRelatedLoading"></app-loader>
+        <app-menu-item class="col-sm-6 col-md-4 col-lg-3" [menuItem]="item" *ngFor="let item of relatedMenuData.slice(0, 8)"></app-menu-item>
+      </div>
+    </div>
+  </div>
+</main>
